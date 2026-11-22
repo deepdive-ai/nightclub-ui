@@ -1,0 +1,9 @@
+NIGHTCLUB — SHAREABLE MOBILE PROTOTYPE
+
+Open or share this public link:
+https://deepdive-ai.github.io/nightclub-ui/NIGHTCLUB_MOBILE_MASCOT_GP.html
+
+No sign-in or download required.
+For offline sharing, send NIGHTCLUB_MOBILE_MASCOT_GP.html and open it in a browser.
+The prototype uses sample data; actions remain local to each browser.
+Updated: 22 November 2026 — mobile UI polish pass.
