@@ -51,6 +51,6 @@ Replies are scripted using simple topic matching: getting started, people, proje
 
 The mascot hides during chat. The page has additional bottom space to keep final content reachable above the floating control. The sheet supports keyboard dismissal and focus return; its conversation and suggestions scroll independently.
 
-The floating Ask me mascot glides down from the top over 2.4 seconds when a screen renders, then rests at bottom-right above navigation. Focus/hover stops the motion; reduced-motion preferences keep it stationary.
+The floating Ask me mascot glides between the top and bottom continuously, taking 4 seconds each way, until first opened; it then rests at bottom-right above navigation for the rest of the page session. Focus/hover stops the motion; reduced-motion preferences keep it stationary.
 
 The assistant uses a generated teal plush character with round sunglasses, inspired by the supplied DOTS reference. It is a Nightclub demo mascot, not an official OpenAI asset. The image is embedded so the HTML remains self-contained.

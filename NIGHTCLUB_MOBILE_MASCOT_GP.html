@@ -190,11 +190,12 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{f
 @media(max-height:500px){.guide-chat-modal{height:95dvh;max-height:95dvh}.guide-chat-modal .guide-disclosure{display:none}.guide-prompts{max-height:54px}}
 
 /* A gentle entrance settles the guide above navigation. */
-.floating-guide{animation:guide-drop 2.4s cubic-bezier(.22,.61,.36,1) 1;transform:none;background:#fffaff;border-color:#c3a2d4;box-shadow:0 6px 20px #60466e30}
+.floating-guide{animation:guide-drop 4s ease-in-out infinite alternate;transform:none;background:#fffaff;border-color:#c3a2d4;box-shadow:0 6px 20px #60466e30}
 @keyframes guide-drop{from{transform:translateY(calc(179px + env(safe-area-inset-bottom) - 100dvh))}to{transform:translateY(0)}}
 .floating-guide:hover,.floating-guide:focus,.floating-guide:active{animation-play-state:paused;transform:none}
 @media(prefers-reduced-motion:reduce){.floating-guide{animation:none!important;transform:none!important}}
 .floating-guide .assistant-character{width:58px;height:58px;object-fit:contain;flex-shrink:0;pointer-events:none}.floating-guide .mascot-hint{color:#17665f}
+.guide-interacted .floating-guide{animation:none!important;transform:none!important}
 </style>
 </head>
 <body>
@@ -389,6 +390,7 @@ function guideAnswer(query){
 }
 function guideLog(){return guideHistory.map(m=>`<article class="guide-bubble ${m.role==='user'?'guide-user':'guide-reply'}"><span class="guide-speaker">${m.role==='user'?'You':'Nightclub guide'}</span><p>${esc(m.text)}</p>${m.links?.length?`<div class="guide-chat-actions">${m.links.map(([label,route])=>`<a class="btn small" href="#${route}">${esc(label)}</a>`).join('')}</div>`:''}</article>`).join('');}
 function openGuideChat(){
+ document.body.classList.add("guide-interacted");
  if(!guideHistory.length)guideHistory.push({role:'guide',text:'Hi! I can help you explore Nightclub. Pick a question below or type a short question about people, projects, learning, or your passport.',links:[]});
  dismissMenu();
  openModal('Nightclub guide · Demo',`<p class="guide-disclosure">Scripted replies using sample data · not live AI. Chat stays in this tab and clears on refresh.</p><div class="guide-chat-log" id="guide-chat-log" role="log" aria-label="Guide conversation" aria-live="polite" aria-relevant="additions">${guideLog()}</div><div class="guide-prompts" aria-label="Suggested questions">${['Where do I start?','Help me find people','What can I work on?','Explain my progress','What is my passport?','Find a session'].map(q=>`<button type="button" class="btn small" data-guide-query="${q}">${q}</button>`).join('')}</div><form id="guide-chat-form" class="guide-compose"><label for="guide-question">Ask about Nightclub</label><div><input id="guide-question" name="question" type="text" maxlength="300" autocomplete="off" placeholder="How do I find people?" required><button type="submit" class="btn primary">Send</button></div></form>`);
