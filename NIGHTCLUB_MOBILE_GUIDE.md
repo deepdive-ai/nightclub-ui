@@ -50,3 +50,5 @@ The mascot now floats at the bottom-right above the mobile navigation with an â€
 Replies are scripted using simple topic matching: getting started, people, projects, progress, sessions, messages, and passport. Replies read the current sample profile, eligible people, circle membership, tasks, and story count. Unknown questions receive a clear fallback. This is not live AI; no API, external message delivery, or credentials are involved. The conversation lasts in the current tab until refresh, and the guide only navigatesâ€”it does not claim tasks or send introductions.
 
 The mascot hides during chat. The page has additional bottom space to keep final content reachable above the floating control. The sheet supports keyboard dismissal and focus return; its conversation and suggestions scroll independently.
+
+The floating Ask me mascot makes one 4.8-second horizontal round trip when a screen renders, then rests at bottom-right. Focus/hover stops the motion; reduced-motion preferences keep it stationary.

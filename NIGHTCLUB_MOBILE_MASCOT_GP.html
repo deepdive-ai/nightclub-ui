@@ -188,6 +188,12 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{f
 .guide-compose{flex:none;margin:0}.guide-compose label{display:block;font-size:12px;font-weight:650;margin-bottom:6px}.guide-compose>div{display:flex;gap:8px}.guide-compose input{width:100%;min-width:0;min-height:46px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--panel);color:var(--ink);font-size:16px}.guide-compose .btn{flex:none}
 .dark .floating-guide{background:#352c3c}.dark .floating-guide .mascot-hint{color:#e7d4f0}.dark .guide-bubble{background:#44364d;color:#f5edf7}.dark .guide-user{background:#304d40;color:#f1fbf5}.dark .guide-speaker{color:#dbc4e5}
 @media(max-height:500px){.guide-chat-modal{height:95dvh;max-height:95dvh}.guide-chat-modal .guide-disclosure{display:none}.guide-prompts{max-height:54px}}
+
+/* A short round-trip draws attention without perpetual movement. */
+.floating-guide{animation:guide-glide 4.8s ease-in-out 1;transform:none;background:#fffaff;border-color:#c3a2d4;box-shadow:0 6px 20px #60466e30}
+@keyframes guide-glide{0%,100%{transform:translateX(0)}50%{transform:translateX(calc(94px - min(100vw,480px)))}}
+.floating-guide:hover,.floating-guide:focus,.floating-guide:active{animation-play-state:paused;transform:none}
+@media(prefers-reduced-motion:reduce){.floating-guide{animation:none!important;transform:none!important}}
 </style>
 </head>
 <body>
