@@ -51,6 +51,6 @@ Replies are scripted using simple topic matching: getting started, people, proje
 
 The mascot hides during chat. The page has additional bottom space to keep final content reachable above the floating control. The sheet supports keyboard dismissal and focus return; its conversation and suggestions scroll independently.
 
-The floating Tap me mascot roams diagonally and side to side across the viewport on an 18-second loop, staying inside its edges and above navigation until first opened; it then rests at bottom-right above navigation for the rest of the page session. Focus/hover stops the motion; reduced-motion preferences keep it stationary.
+The teal Tap me monkey walks back and forth in a dedicated lane directly above the Find your missing pieces card. Alternating legs and a subtle body bob create the walking effect. It stops after the first interaction for the current visit. Hover/focus pauses motion and reduced-motion preferences keep it stationary. Other screens retain a stationary assistant button.
 
 The assistant uses a generated teal plush monkey with mint accents and a curled tail. It is a Nightclub demo mascot, not an official OpenAI asset. The image is embedded so the HTML remains self-contained.
